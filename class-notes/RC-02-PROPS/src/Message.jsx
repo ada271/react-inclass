@@ -1,8 +1,8 @@
 
 
-const Message = () => {
+const Message = ({isim}) => {
   return (
-    <div>Message</div>
+    <div>Benim Adim {isim}</div>
   )
 }
 

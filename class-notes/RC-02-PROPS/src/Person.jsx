@@ -1,3 +1,4 @@
+import Message from "./Message";
 
 
 const Person = (props) => {
@@ -13,6 +14,10 @@ const Person = (props) => {
         </h1>
         <img src={img} alt="" />
         <p>{tel}</p>
+
+        <Message
+            isim={name}
+        />
     </div>
   )
 }
