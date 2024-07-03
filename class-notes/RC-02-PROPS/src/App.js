@@ -1,9 +1,12 @@
 import "./App.css";
+import Message from "./Message";
+import Person from "./Person";
 
 function App() {
   return (
     <div className="App">
-      <h1>DE09</h1>
+      <Person/>
+      <Message/>
     </div>
   );
 }
