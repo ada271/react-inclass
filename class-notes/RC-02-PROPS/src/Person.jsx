@@ -17,6 +17,7 @@ const Person = (props) => {
 
         <Message
             isim={name}
+            telefon={tel}
         />
     </div>
   )
