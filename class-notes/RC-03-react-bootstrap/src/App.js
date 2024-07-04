@@ -1,13 +1,13 @@
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css"
-import Navbar from "./components/Navbar";
+import MyNavbar from "./components/MyNavbar";
 
 function App() {
   return (
     <div>
-      <Navbar/>
-      
+      <MyNavbar/>
+
     </div>
   );
 }
