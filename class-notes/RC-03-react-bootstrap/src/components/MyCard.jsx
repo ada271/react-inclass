@@ -1,30 +1,29 @@
-import Col from "react-bootstrap/esm/Col";
-import Container from "react-bootstrap/esm/Container";
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/esm/Col";
+import Button from "react-bootstrap/Button";
 
 //! react alanında döngü olarak sadece map desteklenir,condition lardan da sadece ternary desteklenir
 
 const MyCard = ({ veri }) => {
     console.log(veri);
+
+    //!alttaki ilk return react ın ekrana bastırılan kısmı
     return (
         <Container>
             <Row>
-                {veri.map((a) => {
+                {veri.map(({ name, text, img, id }) => {
+                    //!arrow (map) süslü kullandığında return ister.reactta süslü koymayabilirsiniz, o zaman returne de ihtiyaç olmaz
+
+                    //?database den çekilen veriler ekrana bastırılırken, en dış div unique bir veri ister bunu da key={id} şeklinde yazarız. id olmak zorunda değil unique herhangi bir property olabilir, mesela img
                     return (
-                        <Col>
+                        <Col key={id}>
                             <Card style={{ width: "18rem" }}>
-                                <Card.Img
-                                    variant="top"
-                                    src="holder.js/100px180"
-                                />
+                                <Card.Img variant="top" src={img} />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the
-                                        card title and make up the bulk of the
-                                        card's content.
-                                    </Card.Text>
+                                    <Card.Title>{name}</Card.Title>
+                                    <Card.Text>{text}</Card.Text>
                                     <Button variant="primary">
                                         Go somewhere
                                     </Button>
