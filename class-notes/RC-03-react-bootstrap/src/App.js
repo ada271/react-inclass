@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 import MyNavbar from "./components/MyNavbar";
 import Slider from "./components/Slider";
-import Card from "./components/Card";
+import MyCard from "./components/MyCard";
 import dataa from "./data"
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
       <Slider/>
 
-      <Card veri={dataa} />
+      <MyCard veri={dataa} />
 
     </div>
   );
