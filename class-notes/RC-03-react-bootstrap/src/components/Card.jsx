@@ -1,8 +1,18 @@
+import Container from "react-bootstrap/esm/Container"
+import Row from "react-bootstrap/Row"
 
 
-const Card = () => {
+const Card = ({veri}) => {
+
+    console.log(veri);
   return (
-    <div>Card</div>
+    <Container>
+        <Row>
+
+        
+        </Row>
+
+    </Container>
   )
 }
 
