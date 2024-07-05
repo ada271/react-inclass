@@ -1,0 +1,11 @@
+@import "./scss/button";
+@import "./scss/reset";
+@import "./scss/variables";
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: $turuncu;
+}
