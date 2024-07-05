@@ -1,5 +1,7 @@
 import veri from "../../data"
 
+import "./Card.scss"
+
 
 const Card = ()=>{
     return(

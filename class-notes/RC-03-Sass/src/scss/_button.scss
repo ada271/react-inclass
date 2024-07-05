@@ -1,0 +1,26 @@
+@import "./variables";
+
+.btn-div{
+    button{
+        border: none;
+        border-radius: 1rem;
+        margin-right: .5rem;
+        color: white;
+        margin: 1rem;
+        &:hover{
+            cursor: pointer;
+            opacity: .5;
+
+        }
+    }
+    &--small{
+        background-color: $yesil;
+        padding: .6rem;
+
+    }
+    &--large{
+        background-color: $kirmizi;
+        padding: .6rem 1.5rem;
+
+    }
+}
