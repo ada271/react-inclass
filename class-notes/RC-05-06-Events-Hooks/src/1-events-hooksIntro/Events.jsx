@@ -13,8 +13,18 @@ const Events = () => {
         document.querySelector("span").textContent=count
     }
 
-    const buttonTitle =()=>{
+    const buttonTitle =(title)=>{
+        
+        console.log(title)
 
+        document.querySelector(".btn-danger").textContent=title
+    }
+
+    const baslikChange =(yeni)=>{
+        baslik=yeni
+        console.log(baslik)
+
+        document.querySelector("h1").textContent=baslik
     }
 
   return (
@@ -25,9 +35,12 @@ const Events = () => {
         <h1>INFO: {baslik}</h1>
         <h2>COUNT: <span className='text-danger'>{count}</span> </h2>
         <button onClick={arttir} className='btn btn-primary'>ARTTIR</button>
-        <button onClick={buttonTitle} className='btn btn-primary m-2'>TEMIZLE</button>
+        <button onClick={()=>buttonTitle("oi")} className='btn btn-danger m-2'>DEGISTIR</button>
+        <button onClick={()=>baslikChange("hello friends")} className='btn btn-info m-2'>TIKLANDI</button>
     </div>
   )
 }
+
+
 
 export default Events
