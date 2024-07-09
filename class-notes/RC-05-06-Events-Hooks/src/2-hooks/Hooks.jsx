@@ -29,7 +29,7 @@ const Hooks = () => {
         renk: "red",
     });
 
-    const  [toggle, setToggle] = useState(true)
+    const [toggle, setToggle] = useState(true);
 
     const arttir = () => {
         setSayac(sayac + 1);
@@ -55,20 +55,30 @@ const Hooks = () => {
     // };
 
     //! 2.YOL
-    const changeAll=()=>{
-        
+    const changeAll = () => {
 
-    }
+        setToggle(!toggle)
 
-    const changeName=()=>{
+        if (toggle) {
+            setKisi({
+                isim: "Mustafa",
+                meslek: "developer",
+                yas: 45,
+                renk: "red",
+            });
+        } else {
+            setKisi({
+                isim: "Erkan",
+                meslek: "FS",
+                yas: 30,
+                renk: "green",
+            });
+        }
+    };
 
-        setKisi({...kisi,isim:"osman", renk:"blue"})
-    }
-
-    
-
-
-    
+    const changeName = () => {
+        setKisi({ ...kisi, isim: "osman", renk: "blue" });
+    };
 
     return (
         <div className="container text-center">
@@ -89,13 +99,23 @@ const Hooks = () => {
             <button onClick={changeAll} className="btn btn-primary m-2">
                 Change All
             </button>
-            <button onClick={changeName} className="btn btn-info m-2">Change Name</button>
-            <button onClick={()=>setKisi({...kisi, yas:35})} className="btn btn-warning">Change Age</button>
-            <button onClick={()=>setToggle(!toggle)} className="btn btn-secondary">SHOW</button>
+            <button onClick={changeName} className="btn btn-info m-2">
+                Change Name
+            </button>
+            <button
+                onClick={() => setKisi({ ...kisi, yas: 35 })}
+                className="btn btn-warning"
+            >
+                Change Age
+            </button>
+            <button
+                onClick={() => setToggle(!toggle)}
+                className="btn btn-secondary"
+            >
+                SHOW
+            </button>
 
-
-            
-            {toggle && <Events/>}
+            {toggle && <Events />}
             {/* {toggle ? <Events/> : ""} */}
             {/* Toggle true ise Events componentini goster aksi takdirde gosterme, alttakini yorumdan çıkarmak istersek App.js deki Events comp. yoruma almalıyız */}
             {/* 
