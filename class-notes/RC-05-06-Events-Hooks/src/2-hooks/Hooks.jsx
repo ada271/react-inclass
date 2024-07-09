@@ -16,27 +16,73 @@
 //?    https://react.dev/reference/react/hooks#state-hooks
 //* =============================================================
 
-import { useState } from "react"
+import { useState } from "react";
 
 const Hooks = () => {
-  const[sayac,setSayac]=useState(0)
+    const [sayac, setSayac] = useState(0);
 
-  const arttir =()=>{
+    const [kisi, setKisi] = useState({
+        isim: "Mustafa",
+        meslek: "developer",
+        yas: 45,
+        renk: "red",
+    });
 
-setSayac(sayac+1)
-  }
-  
-    return (
+    const arttir = () => {
+        setSayac(sayac + 1);
+    };
+
+    //! 1.YOL
+    const changeAll = () => {
+        if (kisi.isim == "Mustafa") {
+            setKisi({
+                isim: "Erkan",
+                meslek: "FS",
+                yas: 30,
+                renk: "green",
+            });
+        } else{
+            setKisi({
+                isim: "Mustafa",
+                meslek: "developer",
+                yas: 45,
+                renk: "red",
+            })
+        }
+    };
+
+    const changeName=()=>{
+
+        setKisi({...kisi,isim:"osman", renk:"blue"})
+    }
+
     
-    <div className="container text-center">
 
-        <h1>********************************************************</h1>
-        <h1>USESTATE</h1>
-        <h2 className="text-danger">COUNT:{sayac}</h2>
 
-        <button onClick={arttir} className="btn btn-primary">ARTTIR</button>
-    </div>
-  )
-}
+    
 
-export default Hooks
+    return (
+        <div className="container text-center">
+            <h1>********************************************************</h1>
+            <h1>USESTATE</h1>
+            <h2 className="text-danger">COUNT:{sayac}</h2>
+
+            <button onClick={arttir} className="btn btn-primary">
+                ARTTIR
+            </button>
+
+            <h1 className="mt-5">USESTATE OBJECT KULLANIMI</h1>
+            <div style={{ color: kisi.renk }}>
+                <h1>{kisi.isim}</h1>
+                <h2>{kisi.meslek}</h2>
+                <h3>{kisi.yas}</h3>
+            </div>
+            <button onClick={changeAll} className="btn btn-primary m-2">
+                Change All
+            </button>
+            <button onClick={changeName} className="btn btn-info">Change Name</button>
+        </div>
+    );
+};
+
+export default Hooks;
