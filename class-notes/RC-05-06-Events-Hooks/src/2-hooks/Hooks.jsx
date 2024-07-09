@@ -17,6 +17,7 @@
 //* =============================================================
 
 import { useState } from "react";
+import Events from "../1-events-hooksIntro/Events";
 
 const Hooks = () => {
     const [sayac, setSayac] = useState(0);
@@ -28,28 +29,36 @@ const Hooks = () => {
         renk: "red",
     });
 
+    const  [toggle, setToggle] = useState(true)
+
     const arttir = () => {
         setSayac(sayac + 1);
     };
 
     //! 1.YOL
-    const changeAll = () => {
-        if (kisi.isim == "Mustafa") {
-            setKisi({
-                isim: "Erkan",
-                meslek: "FS",
-                yas: 30,
-                renk: "green",
-            });
-        } else{
-            setKisi({
-                isim: "Mustafa",
-                meslek: "developer",
-                yas: 45,
-                renk: "red",
-            })
-        }
-    };
+    // const changeAll = () => {
+    //     if (kisi.isim == "Mustafa") {
+    //         setKisi({
+    //             isim: "Erkan",
+    //             meslek: "FS",
+    //             yas: 30,
+    //             renk: "green",
+    //         });
+    //     } else{
+    //         setKisi({
+    //             isim: "Mustafa",
+    //             meslek: "developer",
+    //             yas: 45,
+    //             renk: "red",
+    //         })
+    //     }
+    // };
+
+    //! 2.YOL
+    const changeAll=()=>{
+        
+
+    }
 
     const changeName=()=>{
 
@@ -82,6 +91,17 @@ const Hooks = () => {
             </button>
             <button onClick={changeName} className="btn btn-info m-2">Change Name</button>
             <button onClick={()=>setKisi({...kisi, yas:35})} className="btn btn-warning">Change Age</button>
+            <button onClick={()=>setToggle(!toggle)} className="btn btn-secondary">SHOW</button>
+
+
+            
+            {toggle && <Events/>}
+            {/* {toggle ? <Events/> : ""} */}
+            {/* Toggle true ise Events componentini goster aksi takdirde gosterme, alttakini yorumdan çıkarmak istersek App.js deki Events comp. yoruma almalıyız */}
+            {/* 
+            {
+                toggle===true? <Events/>:""
+            } */}
         </div>
     );
 };
