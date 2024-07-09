@@ -80,7 +80,8 @@ const Hooks = () => {
             <button onClick={changeAll} className="btn btn-primary m-2">
                 Change All
             </button>
-            <button onClick={changeName} className="btn btn-info">Change Name</button>
+            <button onClick={changeName} className="btn btn-info m-2">Change Name</button>
+            <button onClick={()=>setKisi({...kisi, yas:35})} className="btn btn-warning">Change Age</button>
         </div>
     );
 };
