@@ -1,9 +1,11 @@
 import "./App.css";
+import LifeCycleMethods from "./LifeCycleMethods";
 
 function App() {
   return (
-    <div className="App">
-      <h1>DE09</h1>
+    <div>
+    
+    <LifeCycleMethods/>
     </div>
   );
 }
