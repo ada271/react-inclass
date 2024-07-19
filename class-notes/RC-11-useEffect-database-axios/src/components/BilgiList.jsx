@@ -2,9 +2,9 @@
 
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
-import EditBilgi from "./EditBilgi";
-const BilgiList = ({tutorials}) => {
-  
+
+const BilgiList = ({tutorials,deleteBilgi}) => {
+  console.log(tutorials);
 
   return (
     <div className="container mt-4">
@@ -31,9 +31,8 @@ const BilgiList = ({tutorials}) => {
                     type="button"
                     size={22}
                     className="text-danger cursor-pointer"
-                 
-
-                  />
+                    onClick={()=>deleteBilgi(id)}
+                 />
 
                   <FaEdit
                     data-bs-toggle="modal"
@@ -49,7 +48,7 @@ const BilgiList = ({tutorials}) => {
           })}
         </tbody>
       </table>
-      <EditBilgi  />
+     
     </div>
   );
 };
