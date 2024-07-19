@@ -3,7 +3,7 @@
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
-const BilgiList = () => {
+const BilgiList = ({tutorials}) => {
   
 
   return (
@@ -20,12 +20,12 @@ const BilgiList = () => {
           </tr>
         </thead>
         <tbody>
-          {[].map(() => {
+          {tutorials.map(({id,title,description}) => {
             return (
               <tr >
-                <th></th>
-                <td></td>
-                <td> </td>
+                <th>{id}</th>
+                <td>{title}</td>
+                <td>{description}</td>
                 <td className="text-center ">
                   <AiFillDelete
                     type="button"
